@@ -1,0 +1,56 @@
+﻿@{
+    ViewData["Title"] = "Login and Register";
+}
+@model User
+<div class="text-center d-flex justify-content-evenly">
+
+    <div class="flex-1 m-5">
+
+        <h2>Register</h2>
+        
+        <form asp-action="RegisterUser" asp-controller="Home" method="post">
+            
+            <div class="m-3">
+                <label asp-for="FirstName"></label>
+                <input asp-for="FirstName" class="form-control">
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+
+            <div class="m-3">
+                <label asp-for="LastName"></label>
+                <input asp-for="LastName" class="form-control">
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+
+            <div class="m-3">
+                <label asp-for="Email"></label>
+                <input asp-for="Email" class="form-control">
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="m-3">
+                <label asp-for="Password"></label>
+                <input asp-for="Password" class="form-control">
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+
+            <div class="m-3">
+                <label asp-for="PasswordConfirm"></label>
+                <input asp-for="PasswordConfirm" class="form-control">
+                <span asp-validation-for="PasswordConfirm" class="text-danger"></span>
+            </div>
+
+            <button type="submit">Register Now</button>
+
+        </form>
+
+    </div>
+
+    <div class="flex-1 m-5">
+
+        <h2>Login</h2>
+        @await  Html.PartialAsync("_Login")
+
+    </div>
+
+</div>

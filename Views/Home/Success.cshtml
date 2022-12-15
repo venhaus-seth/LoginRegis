@@ -1,0 +1,8 @@
+﻿@{
+    ViewData["Title"] = "Success";
+}
+<h1>@ViewData["Title"] for #@Context.Session.GetInt32("UserId")</h1>
+
+<form asp-action="LogOutUser" asp-controller="Home" >
+    <button type="submit">Logout</button>
+</form>
